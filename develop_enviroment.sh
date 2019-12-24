@@ -1,1 +1,1 @@
-export API_URI="http://localhost:5000/"
+export API_URI="https://cos-api.herokuapp.com/"

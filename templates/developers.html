@@ -6,8 +6,29 @@
 
 {% block content %}
 <div class="container">
+  <div class="row">
   {%- for user in users: %}
-    {{ user.name }}
+    <div class="cell-md-4 cell-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <img src={{user.avatar_url}} alt="avatar" style="width: 25%" />
+          <h6 class="card-title">{{user.name}}</h6>
+        </div>
+        <div class="card-content p-2">
+          <p>
+              <strong><i class="fa fa-github"></i> </strong> <a href={{user.html_url}} target="_blanck">{{user.login}}</a><br />
+              <strong>Company: </strong> {{user.company}} <br />
+              <strong>Blog: </strong> <a href={{user.blog}} target="_blanck" class="blue-text">{{user.blog}}</a> <br />
+              <strong>Email: </strong> {{user.email}} <br />
+              <strong>De: </strong> {{user.location}} <br />
+          </p>
+          <p>
+              {{user.bio}}
+          </p>
+        </div>
+      </div>
+    </div>
   {% endfor %}
+  </div>
 </div>
 {% endblock %}
