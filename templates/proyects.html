@@ -6,6 +6,26 @@
 
 {% block content %}
 <div class="container">
-  <h1>Proyects<h1>
+  <div class="row">
+    {% for repo in repos %}
+      {% if repo.name %}
+      <div class="cell-md-4 cell-sm-12">
+        <div class="card">
+          <div class="card-header">
+            <h6 class="card-title">{{repo.name}}</h6>
+          </div>
+          <div class="card-content p-2">
+            <strong><i class="fa fa-github"></i> </strong> <a href={{repo.html_url}} target="_blanck">{{repo.full_name}}</a><br />
+            <p>{{repo.description}}</p>
+          </div>
+          <div class="card-footer">
+            <strong><i class="fa fa-code"></i> {{repo.language}}</strong>
+            <strong><i class="fa fa-thumbs-o-up"></i> {{repo.stargazers_count}} </strong>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    {% endfor %}
+  </div>
 </div>
 {% endblock %}

@@ -24,7 +24,14 @@ def developers():
 
 @app.route('/proyects.html')
 def proyects():
-    return render_template('proyects.html')
+    res = requests.get("{}{}".format(
+        app.config['API_URI'],
+        'repos'
+    ))
+
+    data = res.json()
+
+    return render_template('proyects.html', repos=data['repos'])
 
 if __name__ == '__main__':
     app.run(debug=True, port=3000)
