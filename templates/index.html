@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Cuban OpenSource
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="img-container">
+    <img src="{{ url_for('static', filename='imgs/logo.png') }}">
+    <div class="image-overlay">
+        <h2 class="text-light">Cuban OpenSource</h2>
+        <p>
+            Awesome list of Cuban open source projects. Just to know what is being openly developed in Cuba...
+        </p>
+    </div>
+  </div>
+</div>
+{% endblock %}

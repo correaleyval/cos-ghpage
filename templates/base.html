@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='imgs/favicon.png') }}">
+    <meta name="description"
+      content="Awesome list of Cuban open source projects. Just to know what is being openly developed in Cuba...">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='metro/css/metro-all.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
+</head>
+<body>
+    {% include 'appbar.html' %}
+
+    <div class="mt-20">
+      {% block content %}
+      {% endblock %}
+    </div>
+
+    {% include 'bottombar.html' %}
+
+    <script src="{{ url_for('static', filename='js/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='metro/js/metro.min.js') }}"></script>
+</body>
