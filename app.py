@@ -11,7 +11,7 @@ def index():
     print(app.config['API_URI'])
     return render_template('index.html')
 
-@app.route('/developers')
+@app.route('/developers.html')
 def developers():
     res = requests.get("{}{}".format(
         app.config['API_URI'],
@@ -22,7 +22,7 @@ def developers():
 
     return render_template('developers.html', users=data['users'])
 
-@app.route('/proyects')
+@app.route('/proyects.html')
 def proyects():
     return render_template('proyects.html')
 
